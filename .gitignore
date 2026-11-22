@@ -1,0 +1,32 @@
+node_modules/
+out/
+dist/
+test-results/
+playwright-report/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+src/renderer/public/pdfjs/
+
+# Local caches, credentials, and application data
+coverage/
+.cache/
+*.tsbuildinfo
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+connections.enc
+host.json
+*.pem
+*.p12
+*.pfx
+*.key
+
+# Personal captures; documentation images remain versioned
+/무제 폴더/
+/무제 폴더/

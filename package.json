@@ -1,0 +1,62 @@
+{
+  "name": "translave",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A quiet workspace for reading PDFs across languages.",
+  "main": "./out/main/index.js",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "postinstall": "node node_modules/electron/install.js",
+    "predev": "node scripts/prepare-pdfjs.mjs",
+    "dev": "electron-vite dev",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit",
+    "prebuild": "node scripts/prepare-pdfjs.mjs",
+    "build": "npm run typecheck && electron-vite build",
+    "test": "vitest run",
+    "test:e2e": "node scripts/test-select.mjs --all --e2e --mode all",
+    "fixtures": "node scripts/create-fixtures.mjs",
+    "format": "prettier --write src scripts tests *.config.ts package.json tsconfig.json",
+    "format:check": "prettier --check src scripts tests *.config.ts package.json tsconfig.json",
+    "pretest": "node scripts/test-select.mjs --catalog",
+    "test:select": "node scripts/test-select.mjs",
+    "test:e2e:quiet": "node scripts/test-select.mjs --all --e2e --mode quiet",
+    "test:e2e:screen": "node scripts/test-select.mjs --all --e2e --mode screen",
+    "test:all": "node scripts/test-select.mjs --all"
+  },
+  "dependencies": {
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/lang-markdown": "^6.5.2",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.15",
+    "jose": "6.2.12",
+    "katex": "0.16.47",
+    "lucide-react": "^0.468.0",
+    "pdfjs-dist": "6.4.299",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-markdown": "^10.1.0",
+    "rehype-katex": "7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "6.0.0",
+    "remark-parse": "11.0.0",
+    "unified": "11.0.5",
+    "vfile": "6.0.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "electron": "44.7.0",
+    "electron-vite": "5.0.0",
+    "pdf-lib": "^1.17.1",
+    "prettier": "^3.9.9",
+    "typescript": "~5.9.3",
+    "vite": "^7.0.0",
+    "vitest": "^4.0.0"
+  }
+}

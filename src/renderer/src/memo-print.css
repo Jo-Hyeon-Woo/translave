@@ -1,0 +1,93 @@
+@page {
+  size: A4;
+  margin: 22mm 16mm 18mm;
+  @top-left {
+    font-family: sans-serif;
+    font-size: 9pt;
+    color: #59625e;
+    vertical-align: middle;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  width: 178mm;
+  color: #25312d;
+  background: white;
+  font:
+    11pt/1.7 -apple-system,
+    BlinkMacSystemFont,
+    'Apple SD Gothic Neo',
+    sans-serif;
+}
+section + section {
+  break-before: page;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  break-after: avoid-page;
+  line-height: 1.35;
+  margin: 1.2em 0 0.5em;
+}
+section > :first-child {
+  margin-top: 0;
+}
+p {
+  margin: 0.6em 0;
+  orphans: 3;
+  widows: 3;
+  overflow-wrap: anywhere;
+}
+blockquote {
+  margin: 1em 0;
+  padding-left: 1em;
+  border-left: 3px solid #b9c3bd;
+}
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 10pt;
+}
+th,
+td {
+  border: 1px solid #c5ccc8;
+  padding: 6px;
+  overflow-wrap: anywhere;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  break-inside: avoid;
+}
+pre {
+  padding: 10px;
+  background: #f2f3f2;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 9pt;
+}
+code {
+  font-family: ui-monospace, monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.katex {
+  color: inherit;
+}
+.katex-display {
+  margin: 0.8em 0;
+}
+.katex-display > .katex {
+  white-space: nowrap;
+}
+.app-math-block {
+  break-inside: avoid;
+}
